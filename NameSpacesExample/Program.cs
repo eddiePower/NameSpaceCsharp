@@ -1,8 +1,6 @@
-﻿using System;
+﻿using NameSpacesExample.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NameSpacesExample
 {
@@ -10,92 +8,34 @@ namespace NameSpacesExample
     {
         static void Main(string[] args)
         {
+            //create a new list of produce items
             var produce = new List<object>();
 
+            //add a fruit item to memory
             var f1 = new Fruit("Apple", 8.5, 3);
+            //add the fruit item to produce list
             produce.Add(f1);
 
+            //create a second fruit item and add it to produce list
             var f2 = new Fruit("Bannana", 4.5, 7);
             produce.Add(f2);
 
+            //add a new vegtable item to the produce list
             produce.Add(new Vegetable("Carrot", 4.1, 16));
 
+            //output the total number of items in the produce list
             Console.WriteLine("There are " + produce.Count + " items in produce");
-
+            
+            //loop over each item in the prod list and output it to the screen
             foreach (var item in produce)
             {
                 Console.WriteLine(item);
             }
-        }
-    }
 
-    class Fruit
-    {
-        public Fruit()
-        {
-        }
-
-        public Fruit(string name, double weight, int quantity)
-        {
-            Name = name;
-            Weight = weight;
-            Quantity = quantity;
-        }
-
-        private string name;
-        public string Name
-        {
-            get { return name.ToUpper(); }
-            set { name = value; }
-        }
-
-        private double weight;
-        public double Weight
-        {
-            get { return weight; }
-            set { weight = value; }
-        }
-
-        public int Quantity { get; set; }
-
-        public override string ToString()
-        {
-            return Name + " (" + Weight + "oz) : " + Quantity;
-        }
-    }
-
-    class Vegetable
-    {
-        public Vegetable()
-        {
-        }
-
-        public Vegetable(string name, double weight, int quantity)
-        {
-            Name = name;
-            Weight = weight;
-            Quantity = quantity;
-        }
-
-        private string name;
-        public string Name
-        {
-            get { return name.ToUpper(); }
-            set { name = value; }
-        }
-
-        private double weight;
-        public double Weight
-        {
-            get { return weight; }
-            set { weight = value; }
-        }
-
-        public int Quantity { get; set; }
-
-        public override string ToString()
-        {
-            return Name + " (" + Weight + "oz) : " + Quantity;
+            //give the user a how to exit comment while pausing to show output
+            //when not in debug mode.
+            Console.WriteLine("\nHit Enter to Exit! :)");
+            Console.ReadLine();
         }
     }
 }
