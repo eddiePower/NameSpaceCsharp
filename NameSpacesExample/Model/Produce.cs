@@ -22,7 +22,7 @@ namespace NameSpacesExample.Model
         //set and retrieve name value
         public string Name
         {
-            get { return name.ToUpper(); }
+            get { return name; }
             set { name = value; }
         }
 
@@ -60,6 +60,11 @@ namespace NameSpacesExample.Model
         {
 
         }
+
+        public override string ToString()
+        {
+            return "Fruit: " + base.ToString();
+        }
     }
 
     class Vegetable : Produce
@@ -73,6 +78,11 @@ namespace NameSpacesExample.Model
             base(name, weight, quantity)
         {
 
+        }
+
+        public override string ToString()
+        {
+            return "Vegetable: " + base.ToString();
         }
     }
 }
